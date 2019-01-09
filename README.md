@@ -25,7 +25,7 @@ perl "$exstra_score" \
 
 replace `perl "$exstra_score"` with:
 ```
-docker run <mount command> bio-str-exstra:latest
+docker run <mount command> ricktankard/bio-str-exstra:latest
 ```
 
 You will need to appropriately set up mounts for your data, replacing `<mount command>`. 
@@ -34,7 +34,7 @@ An example of a full command with all input files in a directory named 'inputs',
 
 ```
 docker run --mount type=bind,source="$(pwd)"/input,target=/input \
-    bio-str-exstra:latest \
+    ricktankard/bio-str-exstra:latest \
     /input/path/to/hg19.fa \
     /input/path/to/repeat_expansion_disorders.txt \
     /input/path/to/bams/*.bam \
