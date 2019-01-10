@@ -38,5 +38,5 @@ RUN curl -LO https://github.com/bahlolab/Bio-STR-exSTRa/archive/master.tar.gz \
     && rm -fr master.tar.gz Bio-STR-exSTRa-master 
 
 
-ENTRYPOINT ["exSTRa_score.pl"]
+CMD echo This container provides the executable: exSTRa_score.pl 1>&2
 
