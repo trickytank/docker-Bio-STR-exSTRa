@@ -2,6 +2,9 @@
 
 mkdir -p  context
 
-docker build -t bio-str-exstra:1.0.2 -f dockerfiles/Dockerfile context
+VERSION=1.0.2
 
-docker tag 9f676bd305a4 ubuntu:13.10
+docker build -t ricktankard/bio-str-exstra:$VERSION -f dockerfiles/Dockerfile context
+
+docker tag ricktankard/bio-str-exstra:$VERSION ricktankard/bio-str-exstra:latest
+
