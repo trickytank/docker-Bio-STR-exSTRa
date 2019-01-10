@@ -8,7 +8,7 @@ Retrieving the repository:
 docker pull ricktankard/bio-str-exstra:latest
 ```
 
-Replace 'perl exSTRa_score.pl' (or 'exSTRa_score.pl' if run as an executable) with a docker run command.
+The Docker container provides 'exSTRa_score.pl' as an executable.
 
 For example, if using the example script:
 https://github.com/bahlolab/Bio-STR-exSTRa/blob/master/examples/run_strexpansion_score.sh
@@ -25,16 +25,17 @@ perl "$exstra_score" \
 
 replace `perl "$exstra_score"` with:
 ```
-docker run <mount command> ricktankard/bio-str-exstra:latest
+docker run <mount command> ricktankard/bio-str-exstra:latest exSTRa_score.pl
 ```
 
-You will need to appropriately set up mounts for your data, replacing `<mount command>`. 
+You will need to appropriately set up mounts for your data, replacing `<mount command>` as for Docker in general. 
 
 An example of a full command with all input files in a directory named 'inputs', that writes to a file output/exSTRa_scores.txt is:
 
 ```
 docker run --mount type=bind,source="$(pwd)"/input,target=/input \
     ricktankard/bio-str-exstra:latest \
+    exSTRa_score.pl \
     /input/path/to/hg19.fa \
     /input/path/to/repeat_expansion_disorders.txt \
     /input/path/to/bams/*.bam \
