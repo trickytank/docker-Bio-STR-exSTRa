@@ -1,5 +1,5 @@
 # docker-Bio-STR-exSTRa
-Docker build for the Perl module Bio::STR::exSTRa
+Docker build for the Perl module [Bio::STR::exSTRa](https://github.com/bahlolab/Bio-STR-exSTRa).
 
 Allows the use of Docker to run the exSTRa_score.pl Perl script without having to worry about dependencies.
 
@@ -42,3 +42,6 @@ docker run --mount type=bind,source="$(pwd)"/input,target=/input \
     > output/exSTRa_scores.txt
 ```
 
+# Dockerfile
+
+The Dockerfile for this container can be found in https://github.com/trickytank/docker-Bio-STR-exSTRa.
