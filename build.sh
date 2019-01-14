@@ -2,7 +2,7 @@
 
 mkdir -p  context
 
-VERSION=1.0.2
+VERSION=1.0.3
 
 docker build -t ricktankard/bio-str-exstra:$VERSION -f dockerfiles/Dockerfile context
 

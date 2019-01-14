@@ -27,15 +27,16 @@ RUN curl -LO https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9
     && rm -fr root/.cpanm
 
 # Install Bio::STR::exSTRa
-RUN curl -LO https://github.com/bahlolab/Bio-STR-exSTRa/archive/master.tar.gz \
-    && tar xzf master.tar.gz \
-    && cd Bio-STR-exSTRa-master \
+ENV EXSTRA_PERL_VERSION "v1.0.3"
+RUN curl -LO https://github.com/bahlolab/Bio-STR-exSTRa/archive/${EXSTRA_PERL_VERSION}.tar.gz \
+    && tar xzf ${EXSTRA_PERL_VERSION}.tar.gz \
+    && cd Bio-STR-exSTRa-* \
     && perl Build.PL \
     && ./Build \
     && ./Build test \
     && ./Build install \
     && cd \
-    && rm -fr master.tar.gz Bio-STR-exSTRa-master 
+    && rm -fr ${EXSTRA_PERL_VERSION}.tar.gz Bio-STR-exSTRa-*
 
 
 CMD echo This container provides the executable: exSTRa_score.pl 1>&2
