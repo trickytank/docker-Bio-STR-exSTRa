@@ -27,7 +27,7 @@ RUN curl -LO https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9
     && rm -fr root/.cpanm
 
 # Install Bio::STR::exSTRa
-ENV EXSTRA_PERL_VERSION "v1.0.3"
+ENV EXSTRA_PERL_VERSION "v1.1.1"
 RUN curl -LO https://github.com/bahlolab/Bio-STR-exSTRa/archive/${EXSTRA_PERL_VERSION}.tar.gz \
     && tar xzf ${EXSTRA_PERL_VERSION}.tar.gz \
     && cd Bio-STR-exSTRa-* \
