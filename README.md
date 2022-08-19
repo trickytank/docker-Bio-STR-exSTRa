@@ -1,4 +1,4 @@
-Note that this project has moved to https://github.com/trickytank/docker-Bio-STR-exSTRa.
+Note that this project has moved to https://github.com/bahlolab/docker-Bio-STR-exSTRa.
 
 # docker-Bio-STR-exSTRa
 Docker build for the Perl module [Bio::STR::exSTRa](https://github.com/bahlolab/Bio-STR-exSTRa).
